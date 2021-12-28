@@ -1,8 +1,8 @@
 import React from 'react';
-import { BrowserRouter as Switch, Route } from 'react-router-dom';
+import {  Switch, Route } from 'react-router-dom';
 import ShopPage from './pages/shop/shop.component';
 import './App.css';
-
+import Header from './components/header/header.component';
 import HomePage from './pages/homepage/homepage.component';
 
 
@@ -10,6 +10,8 @@ import HomePage from './pages/homepage/homepage.component';
 function App() {
   return (
     <div>
+  {/* header will be always present and rendered */}
+      <Header/>  
       <Switch>
         <Route exact path='/' component={HomePage} />
         <Route path='/shop' component={ShopPage} />
