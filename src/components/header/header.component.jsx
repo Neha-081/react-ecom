@@ -1,8 +1,10 @@
 import './header.styles.scss';
 import { Link } from 'react-router-dom';
+import CartIcon from '../cart-icon/cart-icon.component';
 import { connect } from 'react-redux';
 import {ReactComponent as Logo} from '../../assets/crown.svg'
 import { auth } from '../../firebase/firebase.utils';
+
 
 const Header=({currentUser})=>(
     <div className='header'>
@@ -23,6 +25,7 @@ const Header=({currentUser})=>(
              <Link className='option' to='/signin'>SIGN IN</Link>
 
            }
+           <CartIcon/>
   </div>
 
     </div>
