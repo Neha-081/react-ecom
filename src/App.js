@@ -52,7 +52,7 @@ unsubscribeFromAuth=null;
     return (
       <div>
     {/* header will be always present and rendered */}
-        <Header currentUser={this.state.currentUser} />  
+        <Header  />  
         <Switch>
           <Route exact path='/' component={HomePage} />
           <Route path='/shop' component={ShopPage} />
