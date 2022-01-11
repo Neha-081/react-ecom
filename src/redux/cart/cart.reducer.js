@@ -1,4 +1,3 @@
-import { Switch } from "react-router/cjs/react-router.min";
 import CartActionTypes from './cart.types'
 import { addItemToCart } from "./cart.utils";
 

@@ -1,6 +1,7 @@
 import React from 'react';
 import {  Switch, Route,Redirect } from 'react-router-dom';
 import './App.css';
+import { createStructuredSelector } from 'reselect';
 import { connect } from 'react-redux';
 import ShopPage from './pages/shop/shop.component';
 import Header from './components/header/header.component';
@@ -8,6 +9,7 @@ import HomePage from './pages/homepage/homepage.component';
 import SignInAndSignUp from './pages/sign-in-and-sign-up/sign-in-and-sign-up.component';
 import {auth,createUserProfile} from './firebase/firebase.utils';
 import {setCurrentUser} from './redux/user/user.actions'
+import {selectCurrentUser} from './redux/user/user.selectors'
 
 
 class App extends React.Component{
@@ -55,8 +57,8 @@ const {setCurrentUser}=this.props
 }
 
 
-const mapStateToProps=({user})=>({     //redirect to homepage after signin
-  currentUser:user.currentUser
+const mapStateToProps=createStructuredSelector({     //redirect to homepage after signin
+  currentUser:selectCurrentUser
 })
 const mapDispatchToProps=dispatch=>({
   setCurrentUser:user=>dispatch(setCurrentUser(user))

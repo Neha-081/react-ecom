@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 import CustomButton from '../custom-button/custom-button.component';
 import CartItem from '../cart-item/cart-item.component';
 import { selectCartItems } from '../../redux/cart/cart.selectors';
+import { createStructuredSelector } from 'reselect';
+
 
 const CartDropdown=({cartItems})=>(
 <div className='cart-dropdown'>
@@ -13,8 +15,8 @@ const CartDropdown=({cartItems})=>(
 </div>
 )
 
-const mapStateToProps=(state)=>({
-    cartItems:selectCartItems(state)   //state dont rerendered if changes are not regarding to cart items
+const mapStateToProps=createStructuredSelector({
+    cartItems:selectCartItems  //state dont rerendered if changes are not regarding to cart items
 }
     
 )
