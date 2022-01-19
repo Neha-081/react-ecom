@@ -11,6 +11,17 @@ export const selectCollections=createSelector(
     shop=>shop.collections
 )
 
+
+//we want to get all the keys and the map over that array of keys so we get the value of
+// our collections object at that key the keys and the map over that array of keys so we
+// get the value of our collections object at that key,which will give us an array of our items
+export const selectCollectionsForPreview=createSelector(
+    [selectCollections],
+    collections=>Object.keys(collections).map(key=>collections[key])   //converting object of shop data into array to map in collection overview
+)
+
+ 
+
 export const selectCollection=memoize((collectionUrlParam)=>       //collectionUrlParam - string parameter value for each id from shop data
 createSelector(
     [selectCollections],
